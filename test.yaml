@@ -1,2 +1,5 @@
-Gooee: Gooee！
-FirstPersonCamera: 第一人称！
+github-icon.svg: github图标未加载报错,这是正常现象
+CityPlayerTrafficCustomMods: $red 交通自定义 / TrafficCustomMods $
+assembly 'Gooee: $red 缺少前置依赖模组- Gooee $
+(\d+) plugins to load: $green [ 【value】 ] 个模组被加载 $
+A platform service integration failed to initialize: $red STEAM正版验证未通过$
