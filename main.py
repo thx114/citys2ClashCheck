@@ -100,14 +100,18 @@ def process_colored_text(text, result_widget):
         start = match.end()
     # 插入最后一个颜色标记之后的文本（如果有的话）
     if start < len(text):
-        result_widget.insert(tk.END, text[start:])
+        result_widget.insert(tk.END, text[start:].replace('\\n','\n'))
 
 
 def compare_log(rules, log_content, result_widget):
+    
     for pattern, response in rules.items():
         # 将YAML中的【num】等占位符转换为正则表达式的捕获组
         matches = re.finditer(pattern, log_content)
+        pathed = False
         for match in matches:
+            if pathed:
+                continue  
             # 从匹配对象中提取捕获组的值
             captured_values = match.groups()
             # 根据捕获的值替换响应字符串中的占位符
@@ -116,9 +120,9 @@ def compare_log(rules, log_content, result_widget):
                 formatted_response = formatted_response.replace(f"【value】", value)
             # 将替换后的响应字符串插入结果文本框
             result_widget.insert(tk.END, "· ")
-            print(formatted_response)
             process_colored_text(formatted_response, result_widget)
             result_widget.insert(tk.END, "\n")
+            pathed = True
 
 # GUI设计
 def create_gui():
