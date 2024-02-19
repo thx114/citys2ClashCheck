@@ -29,11 +29,8 @@ def update_file_if_necessary(url, local_file_path):
     else:
         local_size = 0
     
-    if local_size != remote_size:
-        print("正在下载对照表...")
-        download_file(url, local_file_path)
-    else:
-        print("本地文件存在且大小一致，无需下载。")
+    print("正在下载对照表...")
+    download_file(url, local_file_path)
 
 # 读取YAML文件以获取比对对象
 def load_yaml_rules(yaml_url):
