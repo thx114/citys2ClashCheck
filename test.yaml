@@ -5,4 +5,5 @@ assembly 'Gooee: $red 缺少前置依赖模组- Gooee $
 A platform service integration failed to initialize: $red STEAM正版验证未通过 $
 Out of memory: $red 内存溢出 $
 'URL: coui://linetool/': $red 无法加载图标，可能缺少前置 统一图标库 $
-GarbageTruckAISystem: $red 垃圾车AI系统报错，可能的模组：$\n      ·服务车辆AI改进 
+GarbageTruckAISystem: $red 垃圾车AI系统报错，可能的模组：$\n      ·服务车辆AI改进
+InfoLoomIndustrialDemandUlSystem:  $red 信息隐现/InfoLoom - DemandUlSystem 报错 $

@@ -5,7 +5,7 @@ import os
 import yaml
 import requests
 import re
-DEV_MODE = True
+DEV_MODE = False
 
 
 def get_remote_file_size(url):
@@ -64,6 +64,7 @@ def display_log_file(log_file_path, text_widget):
     text_widget.tag_configure("WARN", foreground="orange")
     text_widget.tag_configure("DEBUG", foreground="gray")
     text_widget.tag_configure("DEFAULT", foreground="gray")
+    text_widget.tag_configure("ERROR", foreground="red")
 
     if os.path.exists(log_file_path):
         with open(log_file_path, 'r', encoding='utf-8') as file:
@@ -77,6 +78,8 @@ def display_log_file(log_file_path, text_widget):
                     text_widget.insert(tk.END, line, "WARN")
                 elif "[Debug" in line:
                     text_widget.insert(tk.END, line, "DEBUG")
+                elif "[CRITICAL]" in line:
+                    text_widget.insert(tk.END, line, "ERROR")
                 else:
                     text_widget.insert(tk.END, line, "DEFAULT")
     else:
