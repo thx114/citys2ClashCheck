@@ -1,6 +1,9 @@
 github-icon.svg: github图标未加载报错,这是正常现象
 CityPlayerTrafficCustomMods: $red 交通自定义 / TrafficCustomMods $
+
 assembly 'Gooee: $red 缺少前置依赖模组- Gooee $
+assembly 'HookUILib: $red 缺少前置依赖模组- HookUI $
+
 (\d+) plugins to load: $green [ 【value】 ] 个模组被加载 $
 A platform service integration failed to initialize: $red STEAM正版验证未通过 $
 Out of memory: $red 内存溢出 $

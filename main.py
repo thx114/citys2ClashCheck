@@ -7,15 +7,6 @@ import requests
 import re
 DEV_MODE = False
 
-
-def get_remote_file_size(url):
-    """
-    获取远程文件的大小
-    """
-    response = requests.head(url)
-    size = response.headers.get('content-length', 0)
-    return int(size)
-
 def download_file(url, local_file_path):
     """
     下载文件
@@ -30,9 +21,8 @@ def download_file(url, local_file_path):
 
 def update_file_if_necessary(url, local_file_path):
     """
-    如果需要，更新本地文件
+    更新本地对照表
     """
-    remote_size = get_remote_file_size(url)
     
     if os.path.exists(local_file_path):
         local_size = os.path.getsize(local_file_path)
@@ -40,7 +30,7 @@ def update_file_if_necessary(url, local_file_path):
         local_size = 0
     
     if local_size != remote_size:
-        print("本地文件不存在或大小不一致，正在下载更新...")
+        print("正在下载对照表...")
         download_file(url, local_file_path)
     else:
         print("本地文件存在且大小一致，无需下载。")
@@ -79,6 +69,8 @@ def display_log_file(log_file_path, text_widget):
                 elif "[Debug" in line:
                     text_widget.insert(tk.END, line, "DEBUG")
                 elif "[CRITICAL]" in line:
+                    text_widget.insert(tk.END, line, "ERROR")
+                elif "[FATAL]" in line:
                     text_widget.insert(tk.END, line, "ERROR")
                 else:
                     text_widget.insert(tk.END, line, "DEFAULT")
