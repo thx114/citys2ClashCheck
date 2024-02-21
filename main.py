@@ -69,6 +69,8 @@ def display_log_file(log_file_path, text_widget):
                     text_widget.insert(tk.END, line, "ERROR")
                 elif "[FATAL]" in line:
                     text_widget.insert(tk.END, line, "ERROR")
+                elif "[Error" in line:
+                    text_widget.insert(tk.END, line, "ERROR")
                 else:
                     text_widget.insert(tk.END, line, "DEFAULT")
     else:
