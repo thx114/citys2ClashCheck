@@ -12,3 +12,4 @@ Out of memory: $red 内存溢出 $
 
 GarbageTruckAISystem: $red 垃圾车AI系统报错，可能的模组：$\n      ·服务车辆AI改进
 InfoLoomIndustrial.DemandUlSystem:  $red 信息隐现/InfoLoom - DemandUlSystem 报错 $
+另一个程序正在使用此文件，进程无法访问。: $red 另一个程序正在使用此文件，进程无法访问。 请尝试重启电脑$
